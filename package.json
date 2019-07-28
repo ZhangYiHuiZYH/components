@@ -1,5 +1,5 @@
 {
-  "name": "components",
+  "name": "vue-car",
   "version": "0.1.0",
   "private": true,
   "main": "lib/msg.min.js",
@@ -55,7 +55,7 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "description": "vue components",
+  "description": "vue car",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ZhangYiHuiZYH/components.git"
