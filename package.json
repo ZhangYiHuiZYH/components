@@ -1,13 +1,10 @@
 {
-  "name": "my-test",
+  "name": "components",
   "version": "0.1.0",
   "private": true,
   "main": "lib/msg.min.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "build:npm": "webpack --display-error-details --config webpack.config.js"
+    "build": "webpack --display-error-details --config webpack.config.js"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -30,7 +27,7 @@
     "vue-style-loader": "^3.0.3",
     "vue-template-compiler": "^2.5.9",
     "vuex": "^3.0.1",
-    "webpack": "^3.9.1",
+    "webpack": "^3.12.0",
     "webpack-dev-server": "^2.9.5"
   },
   "devDependencies": {},
@@ -57,5 +54,19 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "description": "vue components",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZhangYiHuiZYH/components.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "zhangyihui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZhangYiHuiZYH/components/issues"
+  },
+  "homepage": "https://github.com/ZhangYiHuiZYH/components#readme"
 }
