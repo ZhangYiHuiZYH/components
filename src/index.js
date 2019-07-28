@@ -1,2 +1,2 @@
-import msg from './msg.vue'
+import msg from './components/subject_query.vue'
 export default msg

@@ -2,6 +2,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const uglify = require("uglifyjs-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
  
 module.exports = {
     devtool: 'source-map',
@@ -14,9 +15,24 @@ module.exports = {
         umdNamedDefine: true
     },
     module: {
-        rules: [{
+        rules: [
+            // {     //处理js中引入的css
+            //     test: /\.css$/,
+            //     loader: ExtractTextPlugin.extract({
+            //         use: ['vue-style-loader', 'css-loader']
+            //     })
+            // },
+            {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                // options: {
+                //     loaders: {
+                //         css: ExtractTextPlugin.extract({
+                //             use: 'css-loader',
+                //             fallback: 'vue-style-loader'
+                //         })
+                //     }
+                // }
             },
             {
                 test: /\.less$/,
@@ -28,7 +44,7 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                exclude: /node_modules|vue\/dist|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
+                exclude: /node_modules/,
                 loader: 'babel-loader'
             },
             {
@@ -39,6 +55,9 @@ module.exports = {
                     name: '[name].[ext]?[hash]'
                 }
             }
+        ],
+        loaders: [
+        { test: /\.js$/, loader: 'babel', exclude: /node_modules/ }
         ]
     },
     plugins: [
