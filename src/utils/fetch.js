@@ -3,16 +3,16 @@ import { Message, MessageBox } from 'element-ui'
 import md5 from 'js-md5';
 
 let currentOrigin,str;
-if(API_ENV === "dev"){
+// if(API_ENV === "dev"){
     currentOrigin = 'http://47.95.49.66:8002';//47.93.47.117:8002
     str = 'cb5bbfb7522753e41901dff6aebb4b18';
-}else if(API_ENV === "prod"){
-    currentOrigin = 'http://suyangtiku.speiyou.com:8002';
-    str = '1001ad15f4ed7fefb196aff784d05c89';
-}else if(API_ENV === "test"){
-    currentOrigin = 'http://47.95.49.66:8002';
-    str = 'cb5bbfb7522753e41901dff6aebb4b18';
-}
+// }else if(API_ENV === "prod"){
+//     currentOrigin = 'http://suyangtiku.speiyou.com:8002';
+//     str = '1001ad15f4ed7fefb196aff784d05c89';
+// }else if(API_ENV === "test"){
+//     currentOrigin = 'http://47.95.49.66:8002';
+//     str = 'cb5bbfb7522753e41901dff6aebb4b18';
+// }
 
 // 创建axios实例
 const service = axios.create({
