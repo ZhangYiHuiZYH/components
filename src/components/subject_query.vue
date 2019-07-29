@@ -380,8 +380,13 @@
 </template>
 <script type="text/javascript">    
     // 请求接口的域名
+    import Vue from 'vue'
     import fetch from '../utils/fetch'
     import treeRadio from '../assets/tree-radio.vue'
+    import ElementUI from 'element-ui'
+    import 'element-ui/lib/theme-default/index.css'
+
+    Vue.use(ElementUI)
     export default {
         components: {
             treeRadio:treeRadio
