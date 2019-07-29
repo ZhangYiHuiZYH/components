@@ -2,7 +2,7 @@
   <TreeUl v-bind="childBind"/>
 </template>
 <script>
-import TreeUl from "./treeUI.vue";
+import TreeUl from "./treeUl.vue";
 export default {
   name: "Tree",
   inheritAttrs: false,

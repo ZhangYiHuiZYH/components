@@ -1,7 +1,7 @@
 
 const path = require("path");
 const webpack = require("webpack");
-const uglify = require("uglifyjs-webpack-plugin");
+// const uglify = require("uglifyjs-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
  
 module.exports = {
@@ -16,23 +16,23 @@ module.exports = {
     },
     module: {
         rules: [
-            // {     //处理js中引入的css
-            //     test: /\.css$/,
-            //     loader: ExtractTextPlugin.extract({
-            //         use: ['vue-style-loader', 'css-loader']
-            //     })
-            // },
+            {     //处理js中引入的css
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract({
+                    use: ['vue-style-loader', 'css-loader']
+                })
+            },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
-                // options: {
-                //     loaders: {
-                //         css: ExtractTextPlugin.extract({
-                //             use: 'css-loader',
-                //             fallback: 'vue-style-loader'
-                //         })
-                //     }
-                // }
+                options: {
+                    loaders: {
+                        css: ExtractTextPlugin.extract({
+                            use: 'css-loader',
+                            fallback: 'vue-style-loader'
+                        })
+                    }
+                }
             },
             {
                 test: /\.less$/,
@@ -56,15 +56,29 @@ module.exports = {
                 }
             }
         ],
-        loaders: [
-        { test: /\.js$/, loader: 'babel', exclude: /node_modules/ }
-        ]
+        // loaders: [
+        // { test: /\.js$/, loader: 'babel', exclude: /node_modules/ }
+        // ]
     },
     plugins: [
         new webpack.DefinePlugin({
             "process.env": {
                 NODE_ENV: JSON.stringify("production")
             }
+        }),
+        new ExtractTextPlugin({
+            filename: 'vue-car.min.css',
+            allChunks: true
         })
-    ]
+    ],
+     resolve: {
+        alias: {
+        'vue$': 'vue/dist/vue.esm.js'
+        },
+        extensions: ['*', '.js', '.vue', '.json']
+    },
+    externals: ['vue'],
+    performance: {
+        hints: false
+    },
 };

@@ -15,7 +15,7 @@ import TreeLi from './treeLi'
 // import './tree.css'
 import mixins from './mixins'
 export default {
-  name: 'TreeUl',
+  name: 'TreeUi',
   mixins: [mixins],
   inheritAttrs: false,
   components: {TreeLi},

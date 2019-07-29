@@ -1,6 +1,6 @@
 <template>
     <div class="tree2">
-      <!-- <tree ref='tree2' :data='tree' :topMustExpand='false' :selectAlone='true' :tpl='tpl' @node-select="nodeCheck"/> -->
+      <tree ref='tree2' :data='tree' :topMustExpand='false' :selectAlone='true' :tpl='tpl' @node-select="nodeCheck"/>
       <!-- <div v-for="(node, idx) in selectedItems" :key="idx" class="tree2_path">
         {{node.name}}
           <span @click.stop="delNode(node.id)" >x</span>
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-// import Tree from './tree/tree'
+import Tree from './tree/tree'
 export default {
   name: "treeRadio",  
 	props: {
@@ -143,7 +143,7 @@ export default {
   created() {
   },
 components: {
-    // Tree
+    Tree
   }
 }
 </script>
