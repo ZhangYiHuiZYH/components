@@ -28,20 +28,16 @@ const service = axios.create({
 
 // request拦截器
 service.interceptors.request.use(
-  config => {
-  // console.error('$', $.ajax())
+  async config => {
     var seed;
-    // $.ajax({
-    //   type: "get",
-    //   url: currentOrigin+"/service/seed",
-    //   dataType: "json",
-    //   async: false,
-    //   success: function(data) {
-    //     if(data.code == 200){
-    //       seed = data.result;
-    //     }
-    //   }
-    // })
+    await axios({
+      url: currentOrigin+"/service/seed",
+      mehthod: 'get'
+    }).then(res => {
+      if(res.data.code == 200){
+        seed = res.data.result;
+      }
+    })
     config.headers['sign'] = md5(seed + str);
     config.headers['seed'] = seed
     return config
