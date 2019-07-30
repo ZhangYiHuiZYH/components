@@ -67,7 +67,7 @@ module.exports = {
             }
         }),
         new ExtractTextPlugin({
-            filename: 'vue-car.min.css',
+            filename: 'halower-tree.min.css',
             allChunks: true
         })
     ],
