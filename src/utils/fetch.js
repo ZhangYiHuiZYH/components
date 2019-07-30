@@ -26,22 +26,22 @@ const service = axios.create({
     },
 })
 
-console.error('$', $.ajax())
 // request拦截器
 service.interceptors.request.use(
   config => {
+  console.error('$', $.ajax())
     var seed;
-    $.ajax({
-      type: "get",
-      url: currentOrigin+"/service/seed",
-      dataType: "json",
-      async: false,
-      success: function(data) {
-        if(data.code == 200){
-          seed = data.result;
-        }
-      }
-    })
+    // $.ajax({
+    //   type: "get",
+    //   url: currentOrigin+"/service/seed",
+    //   dataType: "json",
+    //   async: false,
+    //   success: function(data) {
+    //     if(data.code == 200){
+    //       seed = data.result;
+    //     }
+    //   }
+    // })
     config.headers['sign'] = md5(seed + str);
     config.headers['seed'] = seed
     return config
