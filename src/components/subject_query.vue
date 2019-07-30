@@ -384,7 +384,7 @@
     import fetch from '../utils/fetch'
     import treeRadio from '../assets/tree-radio.vue'
     import ElementUI from 'element-ui'
-    import 'element-ui/lib/theme-default/index.css'
+    import 'element-ui/lib/theme-chalk/index.css'
 
     Vue.use(ElementUI)
     export default {
